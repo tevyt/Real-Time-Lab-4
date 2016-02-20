@@ -4,13 +4,14 @@ void setup() {
 }
 
 void loop() {
-  int last = millis();
-  if(millis() - last < 1000){
+  int current = millis();
+  int sum = 0;
+  int count = 0;
+  while(millis() < current + 1000){
     int value = analogRead(3);
-    Serial.println(millis());
-    Serial.println(value);
-    Serial.println();
+    Serial.print(value);
+    sum += value;
+    count++;
   }
-  Serial.println("1 second passed");
-  
+  Serial.print(sum/count);
 }
