@@ -8,10 +8,10 @@ void setup() {
 }
 
 void loop() {
-  long current = millis();
+  long current = millis();//when we started taking readings
   long sum = 0;
   long count = 0;
-  while(millis() <= current + 1000){
+  while(millis() <= current + 1000){//Get readings for one second
     long value = analogRead(3);
     if(value < MAX/3){
       digitalWrite(13 , HIGH);
